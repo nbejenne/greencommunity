@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for @article do |f| %>
+    <%= f.input :title, label: 'Titre', error: 'Titre obligatoire' %>
+    <%= f.input :content, label: 'Contenu', error: 'Contenu obligatoire' %>
+    <%= f.input :picture, label: 'Photo'%>
+    <%= f.input :source, label: 'Source', error: 'Source obligatoire' %>
+    <%= f.button :submit, class: 'btn btn-primary'%>
+  <% end %>
+</div>
