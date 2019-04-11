@@ -1,0 +1,6 @@
+<%= simple_form_for [@article, @comment], method: :post, url: article_comments_path(@article)  do |f| %>
+  <%= f.input :content, label: 'Commentaire', error: 'Contenu obligatoire' %>
+  <%= f.button :submit, "Commenter", class: 'btn btn-warning'%>
+<% end %>
+
+

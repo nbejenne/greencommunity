@@ -1,0 +1,11 @@
+<div class="container">
+  <%= simple_form_for @article, @comment do |f| %>
+    <%= f.input :content, label: 'Titre', error: 'Titre obligatoire' %>
+    <%= f.input :content, label: 'Contenu', error: 'Contenu obligatoire' %>
+    <%= f.input :source, label: 'Source', error: 'Source obligatoire' %>
+    <%= f.input :photo, label: 'Photo'%>
+    <%= f.input :photo_cache, as: :hidden%>
+    <%= f.button :submit, "Créer article", class: 'btn btn-primary'%>
+  <% end %>
+  <%= link_to "Page d'accueil", articles_path, class: 'btn btn-primary' %>
+</div>

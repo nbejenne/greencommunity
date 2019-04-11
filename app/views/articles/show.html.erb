@@ -6,8 +6,18 @@
   <p><%= @article.content %></p>
   <p><em><%= @article.user.nick_name %></em></p>
   <p>Source: <em><%= @article.source %></em></p>
+
+  <h3>Comments:</h3>
+  <% @comments.each do |comment| %>
+    <%= render 'comments/comment', comment: comment %>
+  <% end %>
+  <div>
+    <%= render 'comments/new_comment', article: @article, comment: @comment %>
+  </div>
+  <div>
   <% if @article.user = current_user %>
     <%= link_to "Modifier l'article", edit_my_article_path(@article), class: 'btn btn-primary' %>
   <% end %>
   <%= link_to "Page d'accueil", articles_path, class: 'btn btn-primary' %>
+  </div>
 </div>

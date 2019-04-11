@@ -62,19 +62,23 @@ Article.create!(article_attributes)
 comments_attributes = [
   {
     article: Article.first,
-    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium d'
+    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium d',
+    author: User.first.id
   },
   {
     article: Article.second,
-    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium d'
+    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium d',
+    author: User.second.id
   },
   {
     article: Article.third,
-    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium d'
+    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium d',
+    author: User.first.id
   },
    {
     article: Article.first,
-    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium d'
+    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium d',
+    author: User.second.id
   },
   {
     article: Article.second,
