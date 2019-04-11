@@ -8,14 +8,20 @@ class My::ArticlesController < ApplicationController
   end
 
   def update
-    binding.pry
     @article = Article.find(params[:id])
     if @article.update!(article_params)
       flash[:notice] = 'Article mis à jour'
       redirect_to article_path(@article)
     else
-      render :edit
+      render :edit_my_article_path
     end
+  end
+
+  def destroy
+    @restaurant = Article.find(params[:id])
+    @restaurant.destroy!
+    flash[:notice] = 'Article supprimé'
+    redirect_to articles_path
   end
 
 private

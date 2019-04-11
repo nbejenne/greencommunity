@@ -6,4 +6,6 @@
   <p><em><%= article.user.nick_name %></em></p>
   <p>Source: <em><%= article.source %></em></p>
   <%= link_to "Modifier l'article", edit_my_article_path(article), class: 'btn btn-primary' %>
+  <%= link_to "Supprimer l'article", my_article_path(article), method: :delete, data: {confirm: "Êtes-vous sûr de vouloir supprimer cet article?"}, class: "btn btn-danger" %>
+
 
