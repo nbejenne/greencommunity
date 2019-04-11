@@ -6,4 +6,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  namespace :my do
+    resources :articles, only: [:index, :edit, :update, :destroy]
+  end
+
 end

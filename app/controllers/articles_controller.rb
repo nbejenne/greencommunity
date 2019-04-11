@@ -13,7 +13,9 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    if @article.save
+    @article.user = current_user
+    if @article.save!
+      flash[:notice] = 'Article créé'
       redirect_to article_path(@article)
     else
       render :new
@@ -23,6 +25,6 @@ class ArticlesController < ApplicationController
 private
 
   def article_params
-    params.require(:article).permit(:title, :content, :source, :picture)
+    params.require(:article).permit(:title, :content, :source, :photo, :photo_cache)
   end
 end

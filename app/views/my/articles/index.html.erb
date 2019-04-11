@@ -1,0 +1,8 @@
+<div class="container">
+  <% @articles.each do |article| %>
+    <%= render 'my_article', article: article %>
+  <% end %>
+  <div>
+  <%= link_to "Page d'accueil", articles_path, class: 'btn btn-primary' %>
+  </div>
+</div>

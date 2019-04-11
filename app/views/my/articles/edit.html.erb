@@ -1,11 +1,11 @@
 <div class="container">
-  <%= simple_form_for @article do |f| %>
+  <%= simple_form_for(@article, method: :patch, url: my_article_path(@article)) do |f| %>
     <%= f.input :title, label: 'Titre', error: 'Titre obligatoire' %>
     <%= f.input :content, label: 'Contenu', error: 'Contenu obligatoire' %>
     <%= f.input :source, label: 'Source', error: 'Source obligatoire' %>
     <%= f.input :photo, label: 'Photo'%>
     <%= f.input :photo_cache, as: :hidden%>
-    <%= f.button :submit, "Créer article", class: 'btn btn-primary'%>
+    <%= f.button :submit, 'Mettre à jour',class: 'btn btn-primary'%>
   <% end %>
   <%= link_to "Page d'accueil", articles_path, class: 'btn btn-primary' %>
 </div>

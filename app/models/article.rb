@@ -5,4 +5,7 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
   validates :source, presence: true
+
+  mount_uploader :photo, PhotoUploader
+
 end

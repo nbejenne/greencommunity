@@ -5,4 +5,5 @@
   <p><%= article.content %></p>
   <p><em><%= article.user.nick_name %></em></p>
   <p>Source: <em><%= article.source %></em></p>
+  <%= link_to "Modifier l'article", edit_my_article_path(article), class: 'btn btn-primary' %>
 
