@@ -3,6 +3,12 @@ class My::ArticlesController < ApplicationController
     @articles = current_user.articles
   end
 
+  def show
+    @article = Article.find(params[:id])
+    @comments = @article.comments
+    @comment = Comment.new
+  end
+
   def edit
     @article = Article.find(params[:id])
   end
@@ -11,7 +17,7 @@ class My::ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     if @article.update!(article_params)
       flash[:notice] = 'Article mis à jour'
-      redirect_to article_path(@article)
+      redirect_to my_article_path(@article)
     else
       render :edit_my_article_path
     end
@@ -21,7 +27,7 @@ class My::ArticlesController < ApplicationController
     @restaurant = Article.find(params[:id])
     @restaurant.destroy!
     flash[:notice] = 'Article supprimé'
-    redirect_to articles_path
+    redirect_to my_articles_path
   end
 
 private

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   namespace :my do
-    resources :articles, only: [:index, :edit, :update, :destroy]
+    resources :articles, only: [:index, :show, :edit, :update, :destroy]
   end
 
 end

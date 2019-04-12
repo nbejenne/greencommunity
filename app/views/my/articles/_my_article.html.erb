@@ -1,11 +1,10 @@
-  <h3><%= article.title %></h3>
+  <h3><%= link_to article.title, my_article_path(article)%></h3>
   <% if article.photo.file != nil %>
     <%= cl_image_tag article.photo, height: 300, width: 400, crop: :fill %>
   <% end %>
   <p><%= article.content %></p>
   <p><em><%= article.user.nick_name %></em></p>
   <p>Source: <em><%= article.source %></em></p>
-  <%= link_to "Modifier l'article", edit_my_article_path(article), class: 'btn btn-primary' %>
-  <%= link_to "Supprimer l'article", my_article_path(article), method: :delete, data: {confirm: "Êtes-vous sûr de vouloir supprimer cet article?"}, class: "btn btn-danger" %>
+
 
 

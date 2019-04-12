@@ -21,6 +21,10 @@
     <%= render 'comments/new_comment', article: @article, comment: @comment %>
   </div>
   <div>
+  <% if @article.user = current_user %>
+    <%= link_to "Modifier l'article", edit_my_article_path(@article), class: 'btn btn-primary' %>
+  <% end %>
+  <%= link_to "Supprimer l'article", my_article_path(@article), method: :delete, data: {confirm: "Êtes-vous sûr de vouloir supprimer cet article?"}, class: "btn btn-danger" %>
   <%= link_to "Page d'accueil", articles_path, class: 'btn btn-primary' %>
   </div>
 </div>
