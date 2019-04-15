@@ -1,9 +1,20 @@
 <div class='container'>
   <h3><%= @article.title %></h3>
+
   <% if @article.photo.file != nil %>
     <%= cl_image_tag @article.photo, height: 300, width: 400, crop: :fill %>
   <% end %>
+
   <p><%= @article.content %></p>
+
+  <p><%= link_to vote_article_path(@article), class: 'vote-btn', method: :patch do %></p>
+    <div>
+      <span><p><i id='thumb-vote' class='fa fa-thumbs-up <%"voted" if @article.liked_by @current_user %>'></i></p></span>
+    </div>
+  <% end %>
+
+  <span id='votes-count'><%= @article.get_likes.size %></span>
+
   <p><em><%= @article.user.nick_name %></em></p>
   <p>Source: <em><%= @article.source %></em></p>
 
@@ -17,9 +28,11 @@
       <% end %>
     <% end %>
   </div>
+
   <div>
     <%= render 'comments/new_comment', article: @article, comment: @comment %>
   </div>
+
   <div>
   <%= link_to "Page d'accueil", articles_path, class: 'btn btn-primary' %>
   </div>

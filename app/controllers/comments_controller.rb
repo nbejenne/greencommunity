@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
         end
       else
         respond_to do |format|
-          format.html { render 'restaurant/show' }
+          format.html { render 'articles/show' }
           format.js
         end
       end
