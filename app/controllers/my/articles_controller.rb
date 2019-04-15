@@ -1,5 +1,5 @@
 class My::ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_my_article, only: [:show, :edit, :update, :destroy]
 
   def index
     @articles = current_user.articles
@@ -34,7 +34,7 @@ private
     params.require(:article).permit(:title, :content, :source, :photo, :photo_cache)
   end
 
-  def set_article
+  def set_my_article
     @article = Article.find(params[:id])
   end
 end
