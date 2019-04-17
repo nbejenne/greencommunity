@@ -6,12 +6,12 @@ class CommentsController < ApplicationController
       if @comment.save!
         respond_to do |format|
           format.html { redirect_to article_path(params[:article_id]) }
-          format.js
+          #format.js
         end
       else
         respond_to do |format|
           format.html { render 'articles/show' }
-          format.js
+          #format.js
         end
       end
   end

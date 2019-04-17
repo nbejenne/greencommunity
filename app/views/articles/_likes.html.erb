@@ -1,0 +1,8 @@
+
+<% if @article.likes.where(user: current_user).size > 0 %>
+  <%= render 'articles/destroy_like', article: @article, like: @like %>
+<% else%>
+  <%= render 'articles/create_like', article: @article %>
+<% end %>
+
+

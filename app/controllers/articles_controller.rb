@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :vote]
+  before_action :set_article, only: [:show]
 
   def index
     @articles = Article.all
@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
   def show
     @comments = @article.comments
     @comment = Comment.new
+    @like = @article.likes.where(user: current_user).first
   end
 
   def new
@@ -25,28 +26,10 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def vote
-    @current_user = current_user
-    if !current_user.liked? @article
-      @article.liked_by current_user
-      respond_to do |format|
-        #format.js
-        format.html { redirect_to article_path(@article) }
-      end
-
-    elsif current_user.liked? @article
-      @article.unliked_by current_user
-      respond_to do |format|
-        #format.js
-        format.html { redirect_to article_path(@article) }
-      end
-    end
-  end
-
 private
 
   def article_params
-    params.require(:article).permit(:title, :content, :source, :photo, :photo_cache)
+    params.require(:article).permit(:title, :content, :source, :photo, :photo_cache, :tagline)
   end
 
   def set_article

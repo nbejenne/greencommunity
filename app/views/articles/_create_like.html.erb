@@ -1,0 +1,7 @@
+
+<p><%= link_to article_likes_path(@article), class: 'vote-btn', method: :post, remote: true do %></p>
+  <div>
+    <span><p><i id='thumb-vote' class='fa fa-thumbs-up'></i></p></span>
+  </div>
+  <span id='votes-count'><%= @article.likes.size %></span>
+<% end %>
