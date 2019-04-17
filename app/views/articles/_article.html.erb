@@ -1,8 +1,37 @@
-  <h3><%= link_to article.title, article_path(article)%></h3>
-  <% if article.photo.file != nil %>
-    <%= cl_image_tag article.photo, height: 300, width: 400, crop: :fill %>
-  <% end %>
-  <p><%= article.content %></p>
-  <p><em><%= article.user.nick_name %></em></p>
-  <p>Source: <em><%= article.source %></em></p>
-
+<div class='article-card'>
+  <div class="article-card-left">
+    <div class="comments-number">
+     <%= article.comments.size %> <i class="fas fa-comment-alt"></i>
+    </div>
+    <div class="like-btn">
+      <button class="button button-like">
+        <i class="fa fa-heart"></i>
+        <span> <%= article.likes.size %></span>
+      </button>
+    </div>
+  </div>
+  <div class='article-card-right'>
+    <div class='article-title'>
+      <%= link_to article.title, article_path(article), class: 'article-title-text'%>
+    </div>
+    <div class="article-tagline">
+      <%= article.content.first(390) + "..." %>
+    </div>
+    <div class="article-card-bottom">
+    <!--   <div class="article-author">
+        <%= article.user.nick_name %>
+      </div> -->
+      <div class='tags-container'>
+        <div class='tag'>
+          Bordeaux
+        </div>
+        <div class='tag'>
+          magasin
+        </div>
+        <div class='tag'>
+          Au quotidien
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

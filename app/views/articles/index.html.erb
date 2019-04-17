@@ -1,6 +1,12 @@
+<%= render 'shared/banner' %>
 <div class="container">
+
   <h2>Tous les articles:</h2>
-  <% @articles.each do |article| %>
-    <%= render 'article', article: article %>
-  <% end %>
+  <div class="row">
+    <% @articles.each do |article| %>
+      <div class="col-sm-12 col-md-6">
+        <%= render 'article', article: article %>
+      </div>
+    <% end %>
+  </div>
 </div>

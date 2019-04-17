@@ -5,16 +5,12 @@
     <%= cl_image_tag @article.photo, height: 300, width: 400, crop: :fill %>
   <% end %>
 
+  <p>Description: <%= @article.tagline %></p>
+
   <p><%= @article.content %></p>
-
-  <p><%= link_to vote_article_path(@article), class: 'vote-btn', method: :patch do %></p>
-    <div>
-      <span><p><i id='thumb-vote' class='fa fa-thumbs-up <%"voted" if @article.liked_by @current_user %>'></i></p></span>
-    </div>
-  <% end %>
-
-  <span id='votes-count'><%= @article.get_likes.size %></span>
-
+  <div id='likes-partial'>
+    <%= render 'articles/likes', article: @article  %>
+  </div>
   <p><em><%= @article.user.nick_name %></em></p>
   <p>Source: <em><%= @article.source %></em></p>
 

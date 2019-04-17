@@ -1,10 +1,11 @@
   <h3><%= link_to article.title, my_article_path(article)%></h3>
+  <p><%= article.tagline %> </p>
   <% if article.photo.file != nil %>
     <%= cl_image_tag article.photo, height: 300, width: 400, crop: :fill %>
   <% end %>
   <p><%= article.content %></p>
   <p><em><%= article.user.nick_name %></em></p>
-  <p>Source: <em><%= article.source %></em></p>
+
 
 
 
