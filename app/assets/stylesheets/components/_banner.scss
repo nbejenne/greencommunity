@@ -1,5 +1,16 @@
 .banner-index {
-  background-image: url('https://images.unsplash.com/photo-1538935732373-f7a495fea3f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1427&q=80');
+  background-image: url('https://images.unsplash.com/photo-1501856054482-8b7fbff7b3fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80');
   background-size: cover;
-  height: 500px;
+  padding: 224px 0px;
+  h2 {
+    color: white;
+    text-align: center;
+    font-size: 82px;
+
+  }
+  p {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+  }
 }

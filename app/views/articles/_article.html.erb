@@ -14,13 +14,11 @@
     <div class='article-title'>
       <%= link_to article.title, article_path(article), class: 'article-title-text'%>
     </div>
+
     <div class="article-tagline">
-      <%= article.content.first(390) + "..." %>
+      <%= article.content %>
     </div>
     <div class="article-card-bottom">
-    <!--   <div class="article-author">
-        <%= article.user.nick_name %>
-      </div> -->
       <div class='tags-container'>
         <div class='tag'>
           Bordeaux

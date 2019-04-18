@@ -3,9 +3,8 @@ class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes
 
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 150 }
   validates :content, presence: true
-  validates :source, presence: true
 
   mount_uploader :photo, PhotoUploader
 end
