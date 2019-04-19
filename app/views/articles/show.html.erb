@@ -4,7 +4,7 @@
     <p class='author'>Par <%= @article.user.nick_name %> le <%= @article.created_at.strftime("%d-%m-%Y") %></p>
 
     <% if @article.photo.file != nil %>
-      <%= cl_image_tag @article.photo, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @article.photo, height: 400, width: 1100, crop: :fill %>
     <% end %>
     <div class='article-content'>
       <p><%= @article.content %></p>
