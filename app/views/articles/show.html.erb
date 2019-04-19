@@ -1,34 +1,45 @@
 <div class='container'>
-  <h3><%= @article.title %></h3>
+  <div class="article-container">
+    <h3 class='article-title'><%= @article.title %></h3>
+    <p class='author'>Par <%= @article.user.nick_name %> le <%= @article.created_at.strftime("%d-%m-%Y") %></p>
 
-  <% if @article.photo.file != nil %>
-    <%= cl_image_tag @article.photo, height: 300, width: 400, crop: :fill %>
-  <% end %>
-
-  <p>Description: <%= @article.tagline %></p>
-
-  <p><%= @article.content %></p>
-  <div id='likes-partial'>
-    <%= render 'articles/likes', article: @article  %>
-  </div>
-  <p><em><%= @article.user.nick_name %></em></p>
-  <p>Source: <em><%= @article.source %></em></p>
-
-  <h3>Comments:</h3>
-  <div id="comments">
-    <% if @comments.blank? %>
-      <%= "Soyez le premier à réagir à cet article " %>
-    <% else %>
-      <% @comments.each do |comment| %>
-        <%= render 'comments/comment', comment: comment %>
-      <% end %>
+    <% if @article.photo.file != nil %>
+      <%= cl_image_tag @article.photo, height: 300, width: 400, crop: :fill %>
     <% end %>
-  </div>
+    <div class='article-content'>
+      <p><%= @article.content %></p>
+    </div>
+    <% if !@article.source.empty? %>
+    <div class='article-source'>
+      <p><strong> Source:</strong> <em><%= @article.source %></em></p>
+    </div>
+    <% end %>
+    <div class="social-footer">
+      <div id='likes-partial'>
+        <%= render 'articles/likes', article: @article  %>
+      </div>
+      <div class='comments-btn'>
+        <span><i class='fas fa-comment-alt comments-btn-icon' ></i></span>
+        <span class='comments-btn-icon'><%= @article.comments.size %></span>
+      </div>
+    </div>
 
-  <div>
-    <%= render 'comments/new_comment', article: @article, comment: @comment %>
-  </div>
 
+    <h3>Comments:</h3>
+    <div id="comments">
+      <% if @comments.blank? %>
+        <%= "Soyez le premier à réagir à cet article " %>
+      <% else %>
+        <% @comments.each do |comment| %>
+          <%= render 'comments/comment', comment: comment %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div>
+      <%= render 'comments/new_comment', article: @article, comment: @comment %>
+    </div>
+  </div>
   <div>
   <%= link_to "Page d'accueil", articles_path, class: 'btn btn-primary' %>
   </div>

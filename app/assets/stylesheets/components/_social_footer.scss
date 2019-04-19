@@ -1,0 +1,51 @@
+.social-footer {
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+//========================= LIKES
+.like-btn {
+  display: flex;
+  background-color: #009DDD;
+  font-size: 14px;
+  border-radius: 3px;
+  height: 4vh;
+  width: 15vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.like-btn-icon {
+  color: white;
+  margin: 3%;
+}
+
+.liked {
+  background-color: white!important;
+  border: solid;
+  border-width: 0.7px;
+  border-color: #009DDD;
+  .like-btn-icon {
+    color: #009DDD;
+  }
+}
+
+// ========================== COMMENTS
+
+.comments-btn {
+  display: flex;
+  background-color: #009DDD;
+  font-size: 14px;
+  border-radius: 3px;
+  height: 4vh;
+  width: 15vh;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4%;
+}
+
+.comments-btn-icon {
+  color: white;
+  margin: 9%;
+}

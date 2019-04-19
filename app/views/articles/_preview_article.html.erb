@@ -1,0 +1,36 @@
+<div class='preview-card'>
+  <div class="preview-photo">
+    <%= cl_image_tag article.photo, height: 170, width: 402, crop: :fill%>
+  </div>
+  <h3 class='preview-title'><%= link_to article.title, article_path(article) %></h3>
+  <div class="preview-content">
+    <%= article.content.first(500) %><%= link_to '[...]', article_path(article) %>
+  </div>
+  <div class='preview-tags'>
+    <div id='tag'>
+      Bordeaux
+    </div>
+    <div id='tag'>
+      Maison
+    </div>
+    <div id='tag'>
+      Déchets
+    </div>
+    <div id='tag'>
+      Au quotidien
+    </div>
+    <div id='tag'>
+      Recyclage
+    </div>
+  </div>
+  <div class="preview-footer">
+    <div>
+      <span><i class='fas fa-heart preview-likes-icon'></i></span>
+      <span class='preview-likes-text'><%= article.likes.size %></span>
+    </div>
+    <div>
+      <span><i class='fas fa-comment-alt preview-comments-icon' ></i></span>
+      <span class='preview-comments-text'><%= article.comments.size %></span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+.preview-card {
+  margin-top: 2%;
+  a {
+    color: #28a72e7d;
+  }
+  a:hover {
+    color: #28a72e7d;
+  }
+}
+
+.preview-title {
+  font-family: 'Merriweather', serif;
+  letter-spacing: 2px;
+  font-size: 21px;
+  margin-top: 22px;
+  color: #28a72e7d;
+}
+
+.preview-content {
+  font-family: 'Heebor', sans-serif;
+  letter-spacing: 1px;
+  font-size: 16px;
+  color: #6c757d;
+
+}
+
+.preview-footer {
+  margin: 5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.preview-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.preview-likes-icon {
+  color: #6c757d;
+}
+
+.preview-likes-text {
+  color: #adb5bd;
+  font-family: 'Heebor', sans-serif;
+}
+
+.preview-comments-icon {
+  color: #6c757d;
+}
+
+.preview-comments-text {
+  color: #adb5bd;
+  font-family: 'Heebor', sans-serif;
+}
