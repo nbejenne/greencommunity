@@ -2,5 +2,22 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
-@import "article";
+@import "preview_article";
 @import "banner";
+@import "tag";
+@import "like_btn";
+@import "social_footer";
+
+@media (min-width: 1200px){
+  #content {
+      max-width: 1300px;
+  }
+}
+
+a {
+  text-decoration: none!important;
+}
+
+a:hover {
+  text-decoration: none!important;
+}

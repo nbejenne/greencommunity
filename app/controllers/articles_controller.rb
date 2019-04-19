@@ -18,7 +18,9 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user = current_user
-    if @article.save!
+    capitalize_article(@article)
+    binding.pry
+    if @article.save
       flash[:notice] = 'Article créé'
       redirect_to article_path(@article)
     else
@@ -34,5 +36,14 @@ private
 
   def set_article
     @article = Article.find(params[:id])
+  end
+
+  def capitalize_article (article)
+    binding.pry
+    @article.title = @article.title.capitalize
+    @article.tagline = @article.tagline.capitalize
+    @article.content = @article.content.capitalize
+    @article.source = @article.source.capitalize
+    @article
   end
 end

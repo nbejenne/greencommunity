@@ -1,11 +1,11 @@
 <%= render 'shared/banner' %>
-<div class="container">
+<div id='content' class="container">
 
   <h2>Tous les articles:</h2>
   <div class="row">
     <% @articles.each do |article| %>
-      <div class="col-sm-12 col-md-6">
-        <%= render 'article', article: article %>
+      <div class="col-sm-12 col-md-4 col-md-offset-1">
+        <%= render 'preview_article', article: article %>
       </div>
     <% end %>
   </div>
