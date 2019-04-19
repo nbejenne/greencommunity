@@ -23,21 +23,8 @@
         <span class='comments-btn-icon'><%= @article.comments.size %></span>
       </div>
     </div>
-
-
-    <h3>Comments:</h3>
     <div id="comments">
-      <% if @comments.blank? %>
-        <%= "Soyez le premier à réagir à cet article " %>
-      <% else %>
-        <% @comments.each do |comment| %>
-          <%= render 'comments/comment', comment: comment %>
-        <% end %>
-      <% end %>
-    </div>
-
-    <div>
-      <%= render 'comments/new_comment', article: @article, comment: @comment %>
+      <%= render 'comments/comments', comments: @comments %>
     </div>
   </div>
   <div>
