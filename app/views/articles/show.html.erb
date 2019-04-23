@@ -18,12 +18,13 @@
       <div id='likes-partial'>
         <%= render 'articles/likes', article: @article  %>
       </div>
-      <div class='comments-btn'>
-        <span><i class='fas fa-comment-alt comments-btn-icon' ></i></span>
-        <span class='comments-btn-icon'><%= @article.comments.size %></span>
-      </div>
+        <button class="comments-btn collapsed" type="button" data-toggle="collapse" data-target="#comments-collapse" aria-expanded="false" aria-controls="comments-collapse">
+          <span><i class='fas fa-comment-alt comments-btn-icon' ></i></span>
+          <span id= 'comments-count' class='comments-btn-icon'><%= @article.comments.size %></span>
+        </button>
+
     </div>
-    <div id="comments">
+    <div id="comments-collapse" class='collapse'>
       <%= render 'comments/comments', comments: @comments %>
     </div>
   </div>

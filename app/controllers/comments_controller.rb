@@ -1,8 +1,10 @@
 class CommentsController < ApplicationController
 
   def create
+    @article = Article.find(params[:article_id])
     @comment = Comment.new(comment_params)
     @comment.article = Article.find(params[:article_id])
+    @comment.author = current_user.id
       if @comment.save!
         respond_to do |format|
           format.html { redirect_to article_path(params[:article_id]) }
@@ -19,6 +21,6 @@ class CommentsController < ApplicationController
 private
 
   def comment_params
-    params.require(:comment).permit(:content, :article_id)
+    params.require(:comment).permit(:content, :article_id, :author)
   end
 end
