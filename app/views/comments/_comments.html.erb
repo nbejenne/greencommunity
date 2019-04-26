@@ -2,7 +2,9 @@
 
 <div id="comments">
   <% if @comments.blank? %>
-    <%= "Soyez le premier à réagir à cet article " %>
+    <div id="first-comment">
+      <%= "Soyez le premier à réagir à cet article " %>
+    </div>
   <% else %>
     <% @comments.each do |comment| %>
       <%= render 'comments/comment', comment: comment %>
